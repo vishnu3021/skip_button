@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set methods in js</title>
+</head>
+<body>
+    <!-- <img id="skip" style="display: none;" src="./spiderman-from-miles-morales.jpg" height="100%" width="100%"> -->
+    <button id="click">click me</button>
+   <button id="skip" style="display: none;">skip add</button>
+    <script>
+        const me = document.getElementById("click");
+       const skip = document.getElementById("skip");
+        let timeoutid;
+        //function starts
+        function skipbuttonshows(){
+            timeoutid = setTimeout(()=>{
+                skip.style.display="inline" 
+                me.style.display="none" //shows the skip button
+            },5000) // 5 seconds dealy
+        }
+        me.addEventListener("click", ()=>{
+            clearTimeout(timeoutid)
+            skipbuttonshows()
+        })
+
+    </script>
+</body>
+</html>
